@@ -1,4 +1,4 @@
----
+()---
 layout: page
 title: "Telstra"
 description: "Instructions on how to add Telstra API notifications to Home Assistant."
@@ -13,7 +13,7 @@ ha_release: 0.31
 ---
 
 
-The `telstra` notification platform allows you to deliver Home Assistant notifications to Australian phone numbers over the [Telstra SMS API](https://dev.telstra.com/content/sms-api-0).
+The `telstra` notification platform allows you to deliver Home Assistant notifications to Australian phone numbers (eg +614########) over the [Telstra SMS API](https://dev.telstra.com/content/sms-api-0).
 
 To enable the Telstra notifications in your installation, you must first create an account and API app over at [dev.telstra.com](https://dev.telstra.com/). The free tier allows for 1000 notifications to be sent per month.
 
@@ -34,6 +34,10 @@ Configuration variables:
 - **name** (*Optional*): Setting the optional parameter `name` allows multiple notifiers to be created. The default value is `notify`. The notifier will bind to the service `notify.NOTIFIER_NAME`.
 - **consumer_key** (*Required*): The consumer key of your Telstra API app.
 - **consumer_secret** (*Required*): The consumer secret of your Telstra API app.
-- **phone_number** (*Required*): The phone number of where the notifications will be sent.
+- **phone_number** (*Required*): The phone number of where the notifications will be sent in international format.
+
+NOTES:
+- Requires the number be in international format such as +614######## instead of 04########
+- Be careful not to include a space at the end of your key/secret if copying/pasting
 
 To use notifications, please see the [getting started with automation page](/getting-started/automation/).
